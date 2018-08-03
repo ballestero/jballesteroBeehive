@@ -1,0 +1,74 @@
+.beeActivityComponent{
+	overflow: auto;
+	width: 70%;
+	position: relative;
+}
+
+.beeActivityComponent button{
+	background: none;
+	height: 2em;
+	text-align: center
+   }
+
+.beeActivityComponent::-webkit-scrollbar {
+	width: 10px;
+	border: #fff
+}
+
+.beeActivityComponent::-webkit-scrollbar-thumb {
+	background: #ffce00;
+	border-radius: 5px;
+	width: 10px
+}
+
+.comentForm{
+	position: fixed;
+	z-index: 1;
+	bottom: 0;
+	background: #ffce00;
+	width: 65%;
+	
+}
+
+.comentForm form{
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	width: 90%;
+	margin: 1em auto;
+	font-family: Arial, Helvetica, sans-serif; 
+}
+
+.titleComent{
+	margin: 1em 0;
+	height: 2em;
+	width: 90%;
+	font-family: Arial, Helvetica, sans-serif; 
+	border-radius: 5px;
+	border: 0;
+	color: #000;
+	padding: 0 5px;
+}
+
+
+.bodyComent{
+	height: 4em;
+	width: 90%;
+	border-radius: 5px;
+	border: 0;
+	color: #000;
+	padding: 5px 5px;
+}
+
+.sendBtn, .cancelBtn{
+	
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	background: none;
+	border-radius: 5px;
+	border:2px #41295a solid;
+	color: #41295a;
+	height: 2em;
+	text-align: center;
+	margin: 1em 0;
+	width: 100px;
+}

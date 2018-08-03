@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="index.js"></script>
+	<script src="managers/dataManager.js"></script>
+	<script src="managers/navManager.js"></script>
+	<script src="managers/netManager.js"></script>
+	<script src="components/component.js"></script>
+	<script src="components/beeComponent.js"></script>
+	<script src="components/postComponent.js"></script>
+	<script src="components/commentComponent.js"></script>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/appComponent.css">
+	<link rel="stylesheet" href="css/beeComponent.css">
+	<link rel="stylesheet" href="css/beesComponent.css">
+	<link rel="stylesheet" href="css/beeActivityComponent.css">
+	<link rel="stylesheet" href="css/postComponent.css">
+	<link rel="stylesheet" href="css/todoComponent.css">
+	<link rel="stylesheet" href="css/commentComponent.css">
+</head>
+
+<body>
+	<div class="navbar">
+		<nav>
+			<img src="img/bee-hive-logo.svg" class='logo' alt="beehive">
+			<img src="img/beehive.svg" class='logo2' alt="beehive">
+		</nav>
+	</div>
+	<div id="appComponent" class="appComponent">
+		<div id="beesComponent" class="beesComponent"></div>
+		<div id="beeActivityComponent" class="beeActivityComponent">
+			<div id="postsComponent">POSTS</div>
+			<div id="todosCompoment">TODOS</div>
+			<div class="comentForm" id="comentForm">
+					<form action="">
+						<h3>New coment</h3>
+						<input type="text" name="titleComent" class='titleComent' id="titleComent" placeholder="Title">
+						<textarea name="body" id="bodyComent" class="bodyComent" placeholder="Body"></textarea>
+						<div>
+							<input type="button" id="sendBtn" class="sendBtn" value="sendBtn">
+							<input type="button" id="cancelBtn" class="cancelBtn" value="cancelBtn">
+						</div>
+					</form>
+				</div>
+		</div>
+	</div>
+</body>
+
+</html>

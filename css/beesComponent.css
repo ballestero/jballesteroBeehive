@@ -1,0 +1,24 @@
+.beesComponent{
+	/*background-color: blueviolet;*/
+	width: 40%;
+	min-width: 250px;
+    overflow: auto;
+}
+
+.beesComponent::-webkit-scrollbar {
+	width: 10px;
+	border: #fff
+}
+
+.beesComponent::-webkit-scrollbar-thumb {
+	background: #ffce00;
+	border-radius: 5px;
+	width: 10px
+}
+
+@media (max-width: 1000px) {
+	.beesComponent{
+		width: 50%;
+	}
+  }
+

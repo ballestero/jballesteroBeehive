@@ -1,0 +1,22 @@
+.commentComponent {
+	margin: 0 0 2em 20px;
+	width: 90%;
+	
+}
+
+.commentComponent h4{
+	font-size: 0.9em;
+}
+.commentComponent p{
+	font-size: 0.8em;
+	margin-bottom: 1em
+}
+
+.commentComponent hr {
+	background: #ffce00;
+	width: 200px;
+	height: 2px;
+	border: none;
+	margin: 5px 0 10px 0;
+	border-radius: 50px;
+}

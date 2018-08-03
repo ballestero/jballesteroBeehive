@@ -1,0 +1,33 @@
+/* Add your amazing style here! */
+* {
+	padding: 0px;
+	margin: 0px;
+	color: #fff;
+}
+
+.navbar{
+	height: 10vh;
+	background:  #ffce00;
+}
+
+.logo{
+	height: 8vh;
+	margin: 1vh 1% 1vh 5%;
+}
+
+.logo2{
+	height: 5vh;
+	margin: 1vh 0 2.5vh;
+}
+
+.navbar span{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 2em
+}
+
+p{
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
