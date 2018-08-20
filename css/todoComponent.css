@@ -1,7 +1,87 @@
 .todoComponent{
-	margin-bottom: 5px;
 	color: #fff;
 	overflow: auto;
 	width: 90%;
-	margin: auto;
+	padding: 2.5%;
+	margin: 0 auto 2em;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	border-radius: 5px;
+	background:rgba(255, 255, 255, 0.1);
+}
+
+.todoComponent h3{
+	text-transform: uppercase;
+	font-size: 1.5em;
+	float: left;
+	width: 70%;
+	margin: 0 5% 0.5em 0;
+}
+
+.todoComponent hr{
+	background: #ffce00;
+	width: 60%;
+	height: 3px;
+	border: none;
+	border-radius: 50px;
+	overflow: hidden;
+}
+
+.todoComponent .completeState{
+    height: 25px;
+    width: 25px;
+    background-color: #000;
+}
+
+
+
+
+.todoForm{
+	position: fixed;
+	z-index: 1;
+	bottom: 0;
+	background: #ffce00;
+	width: 65%;
+	
+}
+
+.todoForm form{
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	width: 90%;
+	margin: 1em auto;
+	font-family: Arial, Helvetica, sans-serif; 
+}
+
+.titleTodo{
+	margin: 1em 0;
+	height: 2em;
+	width: 90%;
+	font-family: Arial, Helvetica, sans-serif; 
+	border-radius: 5px;
+	border: 0;
+	color: #000;
+	padding: 0 5px;
+}
+
+
+.bodyTodo{
+	height: 4em;
+	width: 90%;
+	border-radius: 5px;
+	border: 0;
+	color: #000;
+	padding: 5px 5px;
+}
+
+.addNewTodoBTN{
+	width: 70px;
+	height: 75px;
+	background: url(../img/add.svg);
+	background-repeat: no-repeat, no-repeat;
+	background-position: center;
+	background-size: cover;
+	position: fixed;
+	bottom: 4em;
+	right: 3em;
 }

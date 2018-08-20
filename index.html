@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>Beehive</title>
 	<script src="index.js"></script>
 	<script src="managers/dataManager.js"></script>
 	<script src="managers/navManager.js"></script>
@@ -13,7 +13,13 @@
 	<script src="components/component.js"></script>
 	<script src="components/beeComponent.js"></script>
 	<script src="components/postComponent.js"></script>
+	<script src="components/todoComponent.js"></script>
 	<script src="components/commentComponent.js"></script>
+	<script src="components/newPostComponent.js"></script>
+	<script src="components/newCommentComponent.js"></script>
+	<script src="components/newTodoComponent.js"></script>
+	<script src="components/postsComponent.js"></script>
+	<script src="components/todosComponent.js"></script>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/appComponent.css">
@@ -36,18 +42,43 @@
 		<div id="beesComponent" class="beesComponent"></div>
 		<div id="beeActivityComponent" class="beeActivityComponent">
 			<div id="postsComponent">POSTS</div>
-			<div id="todosCompoment">TODOS</div>
+			<div id="todosComponent">TODOS</div>
+
+			<div class="postForm" id="postForm">
+				<form action="">
+					<h3>New Post</h3>
+					<input type="text" name="titlePost" class='titlePost' id="titlePost" placeholder="Title">
+					<textarea name="body" id="bodyPost" class="bodyPost" placeholder="Body"></textarea>
+					<div>
+						<input type="button" id="sendPostBtn" class="sendBtn" value="Post">
+						<input type="button" id="cancelPostBtn" class="cancelBtn" value="Cancel">
+					</div>
+				</form>
+			</div>
+			
 			<div class="comentForm" id="comentForm">
-					<form action="">
-						<h3>New coment</h3>
-						<input type="text" name="titleComent" class='titleComent' id="titleComent" placeholder="Title">
-						<textarea name="body" id="bodyComent" class="bodyComent" placeholder="Body"></textarea>
-						<div>
-							<input type="button" id="sendBtn" class="sendBtn" value="sendBtn">
-							<input type="button" id="cancelBtn" class="cancelBtn" value="cancelBtn">
-						</div>
-					</form>
-				</div>
+				<form action="">
+					<h3>New coment</h3>
+					<input type="text" name="titleComent" class='titleComent' id="titleComent" placeholder="Title">
+					<textarea name="body" id="bodyComent" class="bodyComent" placeholder="Body"></textarea>
+					<div>
+						<input type="button" id="sendBtn" class="sendBtn" value="Coment">
+						<input type="button" id="cancelBtn" class="cancelBtn" value="Cancel">
+					</div>
+				</form>
+			</div>
+
+			<div class="todoForm" id="todoForm">
+				<form action="">
+					<h3>New Todo</h3>
+					<input type="text" name="titleTodo" class='titleTodo' id="titleTodo" placeholder="Title">
+					<div>
+						<input type="button" id="sendTodoBtn" class="sendBtn" value="Todo">
+						<input type="button" id="cancelTodoBtn" class="cancelBtn" value="Cancel">
+					</div>
+				</form>
+			</div>
+			
 		</div>
 	</div>
 </body>

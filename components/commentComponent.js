@@ -1,10 +1,4 @@
-/**
-* @name CommentComponent
-* @extends
-* @file commentComponent.js
-* @author Esteban Padilla <ep@estebanpadilla.com>
-* @version 1.0.0
-*/
+
 class CommentComponent extends Component {
 
 	constructor(model, parent, dataManager) {

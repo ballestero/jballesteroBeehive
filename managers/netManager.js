@@ -81,7 +81,7 @@ class NetManager {
 				}
 
 				//HACK
-				this.dataManager.selectedBee = this.dataManager.bees[1];
+				this.dataManager.selectedBee = this.dataManager.bees[0];
 				this.navManager.showBeePosts();
 
 			} else {
@@ -91,6 +91,23 @@ class NetManager {
 	}
 
 	requestTodos() {
+		var request = new XMLHttpRequest();
+		request.open('GET', './data/todos.json', true);
+		request.onreadystatechange = this.requestTodosCallback.bind(this);
+		request.send();
+	}
 
+	requestTodosCallback(e) {
+		var request = e.target;
+		if (request.readyState == XMLHttpRequest.DONE) {
+			if (request.status == 200) {
+				var todos = JSON.parse(request.responseText);
+				for (const id in todos) {
+					this.dataManager.addTodosToBee(todos[id]);
+				}
+			} else {
+				console.log('Error on request');
+			}
+		}
 	}
 }

@@ -1,18 +1,12 @@
-/**
-* @name DataManager
-* @extends
-* @file dataManager.js
-* @author Esteban Padilla <ep@estebanpadilla.com>
-* @version 1.0.0
-*/
+
 class DataManager {
-	/**
-	* @param {data type} name - description.
-	*/
+
 	constructor() {
 		this.bees = [];
 		this.selectedBee = null;
-		this.navManager = null;
+		this.navManager = new NavManager(this);
+		this.netManager = new NetManager(this, this.navManager);
+	
 	}
 
 	addPostToBee(post) {
@@ -32,18 +26,35 @@ class DataManager {
 
 	addCommentToPost(comment) {
 		this.bees.forEach(bee => {
-			bee.posts.forEach(post => {
-				if (post.id == comment.postId) {
-					if (post.comments) {
-						post.comments.push(comment);
-					} else {
-						post.comments = [];
-						post.comments.push(comment);
+				bee.posts.forEach(post => {
+					if (post.id == comment.postId) {
+						if (post.comments) {
+							post.comments.push(comment);
+						} else {
+							post.comments = [];
+							post.comments.push(comment);
+						}
 					}
-				}
-			});
+				});
 		});
 	}
+
+	addTodosToBee(todo) {
+		this.bees.forEach(bee => {
+			if (bee.id == todo.userId) {
+				if (bee.todos) {
+					bee.todos.push(todo);
+					return;
+				} else {
+					bee.todos = [];
+					bee.todos.push(todo);
+					return;
+				}
+			}
+		});
+	}
+
+	
 
 	showSelectedBeePosts(bee) {
 		this.selectedBee = bee;
@@ -53,5 +64,25 @@ class DataManager {
 	showSelectedBeeTodos(bee) {
 		this.selectedBee = bee;
 		this.navManager.showBeeTodos();
+	}
+
+	sendPost(post) {
+		this.netManager.sendPost(post);
+	}
+
+	deletePost(id) {
+		this.netManager.deletePost(id);
+	}
+
+	sendComment(post, comment) {
+		this.netManager.sendComment(post, comment);
+	}
+
+	sendTodo(todo) {
+		this.netManager.sendTodo(todo);
+	}
+
+	patchTodo(todo) {
+		this.netManager.patchTodo(todo);
 	}
 }

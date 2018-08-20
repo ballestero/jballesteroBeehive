@@ -1,16 +1,19 @@
-/**
-* @name PostComponent
-* @extends
-* @file postComponent.js
-* @author Esteban Padilla <ep@estebanpadilla.com>
-* @version 1.0.0
-*/
 class PostComponent extends Component {
 
 	constructor(model, parent, dataManager,comentForm) {
 		super(model, parent, dataManager,comentForm);
 		this.container.className = 'postComponent';
 		this.comentForm = comentForm;
+		this.model = model;
+		this.addPostBtn = document.getElementById('addPostBtn');
+		this.ownerID = 1;
+
+		
+		if (this.model.userId === this.ownerID) {
+			this.addPostBtn.hidden = false;	
+		}else{
+			this.addPostBtn.hidden = true;
+		}
 
 		//Create html elements
 		this.title = document.createElement('h3');
@@ -47,6 +50,7 @@ class PostComponent extends Component {
 		this.model.comments.forEach(comment => {
 			var commentComponent = new CommentComponent(comment, this.container, this.dataManager);
 		});
+
 	}
 
 	showComentForm() {
@@ -63,7 +67,7 @@ class PostComponent extends Component {
 		this.bodyComent = document.getElementById('bodyComent');
 
 		console.log(this.model.comments);
-		var comment = { postId: this.model.id, id: 0, name: this.name.value, email: "Laurie@lincoln.us", body: this.bodyComent.value };
+		var comment = { postId: this.model.id, id: 0, name: this.name.value, email: this.model.email, body: this.bodyComent.value };
 		this.model.comments.push(comment);
 		this.dataManager.navManager.showBeePosts();
 		this.name.value = null;
@@ -72,10 +76,8 @@ class PostComponent extends Component {
 	}
 
 	hideForm(){
-
 		this.name = document.getElementById('titleComent');
 		this.bodyComent = document.getElementById('bodyComent');
-
 		this.name.value = null;
 		this.bodyComent.value = null;
 		this.comentForm.hidden = true;

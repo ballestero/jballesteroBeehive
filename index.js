@@ -17,8 +17,4 @@ function init() {
 	dataManager.navManager = navManager;
 	netManager.init();
 
-
-
-	//2. Initialize variables
-	//3. Program Logic
 }
