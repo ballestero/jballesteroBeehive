@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend for the beehive project.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Esteban Padilla",
+  "license": "ISC",
+  "devDependencies": {
+    "install": "^0.12.1",
+    "nodemon": "^1.18.3",
+    "npm": "^6.3.0",
+    "uniqid": "^5.0.3"
+  },
+  "dependencies": {
+    "deep-cleaner": "^1.1.2"
+  }
+}
