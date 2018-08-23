@@ -9,7 +9,6 @@ class NavManager {
 		this.comentForm = document.getElementById('comentForm');
 		this.todoForm = document.getElementById('todoForm');
 		this.beeActivityComponent = document.getElementById('beeActivityComponent');
-		//this.newPostComponent = new NewPostComponent(null, this.beeActivityComponent, this.dataManager);
 		this.postsComponent.hidden = true;
 		this.todosComponent.hidden = true;
 		this.todoForm.hidden = true;

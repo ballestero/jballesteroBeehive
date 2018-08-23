@@ -1,9 +1,4 @@
-/**
-* @name server.js
-* @file Add a small description for this file.
-* @author Esteban Padilla <ep@estebanpadilla.com>
-* @version 1.0.0
-*/
+
 var http = require('http');
 var url = require('url');
 var dataManager = require('./managers/dataManager');

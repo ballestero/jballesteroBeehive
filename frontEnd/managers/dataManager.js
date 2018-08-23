@@ -85,4 +85,9 @@ class DataManager {
 	patchTodo(todo) {
 		this.netManager.patchTodo(todo);
 	}
+	deleteTodo(id) {
+		
+		this.netManager.deleteTodo(id);
+		
+	}
 }

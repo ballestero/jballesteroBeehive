@@ -1,9 +1,3 @@
-/**
-* @name usersRouter.js
-* @file Add a small description for this file.
-* @author Esteban Padilla <ep@estebanpadilla.com>
-* @version 1.0.0
-*/
 
 var cleaner = require('deep-cleaner');
 
@@ -116,17 +110,23 @@ router.patch = function (request, response, path) {
 
 router.delete = function (request, response, query, path) {
 	var id = query.query;
-	//console.log(id);
 
 	this.dataManager.load(path).then((data) => {
 
 		for (const key in data) {
+			
 			if (data.hasOwnProperty(key)) {
+				
 				if (data[key].id === id) {
 					delete data[key];
+					
+				}else{
+					console.log('No');
+					
 				}
 			}
 		}
+
 
 		cleaner(data);
 

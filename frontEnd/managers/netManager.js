@@ -10,7 +10,6 @@ class NetManager {
 	//Get Methods
 	getUsers() {
 		var request = new XMLHttpRequest();
-		//request.open('GET', './data/users.json', true);
 		request.open('GET', this.url + 'users', true);
 		request.onreadystatechange = this.getUsersCallback.bind(this);
 		request.send();
@@ -20,7 +19,6 @@ class NetManager {
 		var request = e.target;
 		if (request.readyState == XMLHttpRequest.DONE) {
 			if (request.status == 200) {
-				//console.log(this);
 				var bees = JSON.parse(request.responseText);
 
 				for (const id in bees) {
@@ -39,7 +37,6 @@ class NetManager {
 
 	getPosts() {
 		var request = new XMLHttpRequest();
-		// request.open('GET', './data/posts.json', true);
 		request.open('GET', this.url + 'posts', true);
 		request.onreadystatechange = this.getPostCallback.bind(this);
 		request.send();
@@ -69,7 +66,6 @@ class NetManager {
 
 	getComments() {
 		var request = new XMLHttpRequest();
-		//request.open('GET', './data/comments.json', true);
 		request.open('GET', this.url + 'comments', true);
 		request.onreadystatechange = this.getCommentsCallback.bind(this);
 		request.send();
@@ -99,7 +95,6 @@ class NetManager {
 
 	getTodos() {
 		var request = new XMLHttpRequest();
-		//request.open('GET', './data/todos.json', true);
 		request.open('GET', this.url + 'todos', true);
 		request.onreadystatechange = this.getTodosCallback.bind(this);
 		request.send();
@@ -219,4 +214,47 @@ class NetManager {
 		}
 	}
 
+	//Delete Methods
+
+	deleteTodo(id){
+		var request = new XMLHttpRequest();
+		request.open('DELETE', (this.url + 'todos/?query=' + id), true);
+		request.onreadystatechange = this.deleteTodoCallback.bind(this);
+		request.send();
+	}
+
+	deleteTodoCallback(e){
+		var request = e.target;
+		if (request.readyState == XMLHttpRequest.DONE) {
+			if (request.status == 200) {
+				this.navManager.showBeeTodos();
+			}
+			else {
+				console.log('Error on request');
+			}
+		}
+	}
+
+	deletePost(id) {
+		var request = new XMLHttpRequest();
+		request.open('DELETE', (this.url + 'posts/?query=' + id), true);
+		request.onreadystatechange = this.deletePostCallback.bind(this);
+		request.send();
+	}
+
+	deletePostCallback(e) {
+		var request = e.target;
+		if (request.readyState == XMLHttpRequest.DONE) {
+			if (request.status == 200) {
+				this.navManager.showPostsComponent();
+			}
+			else {
+				console.log('Error on request');
+			}
+		}
+	}
+
+	deleteComment() {
+
+	}
 }
